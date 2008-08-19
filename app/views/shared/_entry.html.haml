@@ -1,0 +1,11 @@
+%li.alt{ :id => "entry-#{entry.id}" }
+  %div{ :style => "float:right;padding-left:5px;" } 
+    %img{ :class => 'avatar', :src => entry.gravatar_url, :alt => 'gravatar', :height => 38, :width => 38 }
+  %div
+    %cite
+      = h(entry.author)
+
+    = _("says")
+    %br
+    %small.entrymetadata= showDate(entry, "LOC")
+    %p= showText(entry)

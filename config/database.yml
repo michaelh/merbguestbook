@@ -1,0 +1,17 @@
+---
+# This is a sample database file for the ActiveRecord ORM
+:development: &defaults
+  :adapter: postgresql
+  :database: tvh_development
+  :username: root
+  :password:
+  :socket: /tmp
+  :encoding: utf8
+
+:test:
+  <<: *defaults
+  :database: tvh_test
+
+:production:
+  <<: *defaults
+  :database: tvh_production

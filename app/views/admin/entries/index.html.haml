@@ -1,0 +1,5 @@
+- throw_content(:subtitle, _("ENTRIES"))
+
+.entriesblock
+  = paginated_section @entries, :prev_label => _("PREVIOUS_BUTTON_LABEL"), :next_label => _("NEXT_BUTTON_LABEL") do
+    %ol.entrieslist= partial( "admin/entry", :with => @entries)

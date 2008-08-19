@@ -1,0 +1,10 @@
+.entriesblock
+  - jquery "$(document).ready(function() { $(\"input.leave_message_button\").click(function () { $(\"#entry_form_hidden\").slideDown(\"slow\"); $(\"input.leave_message_button\").hide(); }); });"
+  %p
+    %input.leave_message_button{ :value => _("LEAVE_MESSAGE"), :type => "button" }
+  #entry_form_hidden
+    = partial( "shared/form", :with => @entry )
+
+  = paginated_section @entries, :prev_label => _("PREVIOUS_BUTTON_LABEL"), :next_label => _("NEXT_BUTTON_LABEL") do
+    %ol.entrieslist= partial( "shared/entry", :with => @entries)
+ 

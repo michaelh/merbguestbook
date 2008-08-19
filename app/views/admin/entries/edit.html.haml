@@ -1,0 +1,25 @@
+.entriesblock
+  %p
+    = _"EDIT_ENTRY" 
+    (
+    = link_to _('CANCEL'), url( :controller => "admin/entries", :action => "index", :id => "#{@entry.id}" )
+    )
+  - form_for(:entry, :action => url( :controller => "admin/entries", :action => "edit", :id => "#{@entry.id}")) do
+    %p
+      = text_control(:author,  :size => 40)
+      %small
+        = label _("LABEL_NAME_REQUIRED"), "", :for => "email"
+      = handleError(@entry, :author)
+    %p
+      = text_control(:email,  :size => 40)
+
+      %small
+        = label _("LABEL_MAIL_REQUIRED"), "", :for => "email"
+      = handleError(@entry, :email)
+    %p
+      = text_area_control(:text,   :rows => 10, :cols => "100%")
+      = handleError(@entry, :text)
+    = submit_button(_"PREVIEW_BUTTON_TEXT", :name => "preview_button")
+    = submit_button(_"POST_BUTTON_TEXT", :name => "post_button")
+
+  %ol.entrieslist= partial( "shared/entry", :with => @entry )

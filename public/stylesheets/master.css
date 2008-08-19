@@ -1,0 +1,150 @@
+/* containers */
+
+body {
+  background: #fff;
+  border-top: 5px solid #333;
+  color: #555;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 80%;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+#wrap {
+  margin: 0 auto;
+  text-align: left;
+  width: 76em;
+}
+
+#content {
+  font-size: 1.2em;
+  float:left;
+  padding: 1em;
+  padding-top: 0.5em;
+  width: 40em;
+}
+
+#header {
+  padding: 3em 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px dotted #ddd;
+}
+
+#footer {
+  background: #333;
+  border-top: 1px solid #777;
+  color: #888;
+  clear:both;
+  font-size: 0.9em;
+  padding: 0.5em;
+}
+
+
+/* h{1,2,3} and p */
+h1, h2, h3 {
+  font-family: Tahoma, Verdana, Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+#header h1 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 3em;
+  margin: 0;
+  margin-right: 1em;
+}
+
+#header h1 a {
+  color: #E87830;
+}
+
+#header h1 a:hover {
+  color: #CC0000;
+}
+
+#header p {
+  color: #aaa;
+  font-size: 1.1em;
+  margin: 0;
+  margin-top: -0.5em;
+}
+
+
+/* entries */
+
+.entriesblock {
+  margin: 0.5em;
+  padding: 1em;
+  padding-top: 0.5em;
+}
+
+.entriesblock textarea {
+  width: 35em;
+}
+
+.entriesblock input, .entriesblock textarea{
+  border: 1px solid #d1d1d1;
+}
+
+.entriesblock textarea:focus{
+  background: #eee;
+  border:1px solid #a1a1a1;
+}
+
+.entriesblock textarea:focus, .entriesblock input:focus {
+  background: #eee;
+  border:1px solid #a1a1a1;
+}
+
+ol.entrieslist {
+  color: #777;
+  font-size: 0.9em;
+  list-style-type: none;
+  margin: 0;
+  margin-top: 1.5em;
+  padding: 0;
+}
+
+.entrieslist li {
+  margin-bottom: 0.5em;
+  padding: 0.5em 1em;
+}
+
+.alt {
+  background: #f3f5e9;
+  border: 1px dotted #d1d1d1;
+  padding: 0.5em;
+}
+
+/* misc */
+
+a {
+  color: #579;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #CC0000;
+}
+
+img.gravatar {
+  border: 1px solid gray;
+}
+
+.error {
+  padding:          2px;
+  border: 2px solid red;
+}
+
+.errorText {
+  padding: 0;
+  color: red;
+  font-size: small;
+}
+
+#entry_form_hidden {
+  display: none;
+};

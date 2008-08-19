@@ -1,0 +1,25 @@
+MerbGuestbook
+
+A merb guestbook application using spam protection (recaptcha) and haml.
+
+The following dependencies are needed:
+
+- merb 0.9.4
+- merb-more
+- merb_global
+- merb_helpers
+- merb_activerecord
+- gravtastic
+
+- merb_paginate http://github.com/gogolok/merb_paginate/
+- merb_recaptcha http://github.com/gogolok/recaptcha/
+- merb-fixtures http://github.com/gogolok/merb-fixtures/
+
+
+You need to set the environment variables
+RECAPTCHA_PUBLIC_KEY
+and
+RECAPTCHA_PRIVATE_KEY
+before starting the application.
+
+You should also protect the pages below /admin.
