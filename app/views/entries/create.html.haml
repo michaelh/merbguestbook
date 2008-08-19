@@ -4,4 +4,4 @@
   = partial( "shared/form", :with => @entry )
   - if @entry.errors.empty?
     #entries
-      %ol.entries= partial( "shared/entry", :with => @entry )
+      %ol.entrieslist= partial( "shared/entry", :with => @entry )
