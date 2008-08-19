@@ -2,7 +2,7 @@
 # This is a sample database file for the ActiveRecord ORM
 :development: &defaults
   :adapter: postgresql
-  :database: tvh_development
+  :database: merbguestbook_development
   :username: root
   :password:
   :socket: /tmp
@@ -10,8 +10,8 @@
 
 :test:
   <<: *defaults
-  :database: tvh_test
+  :database: merbguestbook_test
 
 :production:
   <<: *defaults
-  :database: tvh_production
+  :database: merbguestbook_production
