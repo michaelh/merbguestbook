@@ -1,7 +1,7 @@
 - throw_content(:subtitle, _("PREVIEW"))
 
-= partial( "shared/form", :with => @entry )
-
-- if @entry.errors.empty?
-  #entries
-    %ol.entries= partial( "shared/entry", :with => @entry )
+.entriesblock
+  = partial( "shared/form", :with => @entry )
+  - if @entry.errors.empty?
+    #entries
+      %ol.entries= partial( "shared/entry", :with => @entry )
