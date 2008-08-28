@@ -12,8 +12,8 @@ class Entry < ActiveRecord::Base
   include MerbPaginate::Finders::Activerecord
   
   # gravator support
-  include Gravtastic::Model
-  has_gravatar
+  include Gravtastic::Resource
+  is_gravtastic
 
   #before_create :generate_token
 
