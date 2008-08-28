@@ -9,7 +9,7 @@
 #
 # ==== Set up load paths
 #
-# Add the app's "gems" directory to the gem load path.
+
 # Add the app's "gems" directory to the gem load path.
 # Note that the gems directory must mirror the structure RubyGems uses for
 # directories under which gems are kept.
@@ -70,6 +70,10 @@ use_test :rspec
 
 
 #
+# ==== Choose which template engine to use by default
+#
+
+use_template_engine :haml
 # ==== Set up your basic configuration
 #
 Merb::Config.use do |c|
