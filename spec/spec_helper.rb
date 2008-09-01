@@ -14,8 +14,8 @@ module Merb
         body.should match_selector("form[@action='/entries/create'] input[@name='entry[author]']")
         body.should match_selector("form[@action='/entries/create'] input[@name='entry[email]']")
         body.should match_selector("form[@action='/entries/create'] textarea[@name='entry[text]']")
-        body.should match_selector("form[@action='/entries/create'] button[@type='submit' name='preview_button']")
-        body.should match_selector("form[@action='/entries/create'] button[@type='submit' name='post_button']")
+        body.should match_selector("form[@action='/entries/create'] input[@type='submit' name='preview_button']")
+        body.should match_selector("form[@action='/entries/create'] input[@type='submit' name='post_button']")
       end
     end
   end
