@@ -1,21 +1,23 @@
 %h3= _("LEAVE_MESSAGE")
-- form_for(:entry, :action => url( :controller => "entries", :action => "create")) do
+= form_for(:entry, :action => url( :controller => "entries", :action => "create")) do
   %p 
-    = text_control(:author,  :size => 40)
+    = text_field(:author,  :size => 40)
     %small
-      = label _("LABEL_NAME_REQUIRED"), "", :for => "email"
+      %label{ :for => "email" }
+        = _("LABEL_NAME_REQUIRED")
   = handleError(@entry, :author)
   %p
-    = text_control(:email,  :size => 40)
+    = text_field(:email,  :size => 40)
     %small
-      = label _("LABEL_MAIL_REQUIRED"), "", :for => "email"
+      %label{ :for => "email" }
+        = _("LABEL_MAIL_REQUIRED")
   = handleError(@entry, :email)
 
   %p
-    = text_area_control(:text,   :rows => 10, :cols => "100%")
+    = text_area(:text,   :rows => 10, :cols => "100%")
   = handleError(@entry, :text)
 
   = recaptcha_tags
 
-  = submit_button(_("PREVIEW_BUTTON_TEXT"), :name => "preview_button")
-  = submit_button(_("POST_BUTTON_TEXT"),    :name => "post_button")
+  = submit(_("PREVIEW_BUTTON_TEXT"), :name => "preview_button")
+  = submit(_("POST_BUTTON_TEXT"),    :name => "post_button")
