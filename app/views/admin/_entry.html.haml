@@ -8,7 +8,7 @@
     = _("says")
     %br
     %small.entrymetadata= showDate(entry, "LOC")
-    %p= h(entry.text)
+    %p= showText(entry)
     %p
       = link_to toggleShowText(entry), url( :controller => "admin/entries", :action => "toggle_show", :id => entry.id )
       = link_to _('EDIT'), url( :controller => "admin/entries", :action => "edit", :id => entry.id )

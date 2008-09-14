@@ -28,7 +28,6 @@ module Merb
 
     def showText(entry)
       return h(entry.text).gsub("\n", "<br>")
-
     end
 
   end
