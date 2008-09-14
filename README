@@ -4,7 +4,7 @@ A merb guestbook application using spam protection (recaptcha) and haml.
 
 The following dependencies are needed:
 
-- merb 0.9.5
+- merb 0.9.7
 - merb-more
 - merb_global
 - merb_helpers

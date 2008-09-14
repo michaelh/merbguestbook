@@ -1,3 +1,5 @@
+$KCODE = 'UTF8'
+
 #
 # ==== Structure of Merb initializer
 #
@@ -33,8 +35,6 @@
 # Remember that bundling of dependencies as gems with your application
 # makes it independent of the environment it runs in and is a very
 # good, encouraged practice to follow.
-Gem.clear_paths
-Gem.path.unshift(Merb.root / "gems")
 
 # If you want modules and classes from libraries organized like
 # merbapp/lib/magicwand/lib/magicwand.rb to autoload,
@@ -51,9 +51,11 @@ dependency "merb_paginate"
 dependency "merb-fixtures"
 dependency "merb_recaptcha"
 
+# You can also add in dependencies after your application loads.
 Merb::BootLoader.after_app_loads do
-  # Add dependencies here that must load after the application loads
-  
+  # For example, the magic_admin gem uses the app's model classes. This requires that the models be 
+  # loaded already. So, we can put the magic_admin dependency here:
+  # dependency "magic_admin"
 end
 
 #
@@ -76,6 +78,17 @@ use_test :rspec
 use_template_engine :haml
 # ==== Set up your basic configuration
 #
+
+# IMPORTANT:
+#
+# early on Merb boot init file is not yet loaded.
+# Thus setting PORT, PID FILE and ADAPTER using init file does not
+# make sense and only can lead to confusion because default settings
+# will be used instead.
+#
+# Please use command line options for them.
+# See http://wiki.merbivore.com/pages/merb-core-boot-process
+# if you want to know more.
 Merb::Config.use do |c|
 
   # Sets up a custom session id key which is used for the session persistence
@@ -100,22 +113,22 @@ Merb::Plugins.config[:fixtures] = {
 # ==== Tune your inflector
 
 # To fine tune your inflector use the word, singular_word and plural_word
-# methods of Language::English::Inflector module metaclass.
+# methods of English::Inflect module metaclass.
 #
 # Here we define erratum/errata exception case:
 #
-# Language::English::Inflector.word "erratum", "errata"
+# English::Inflect.word "erratum", "errata"
 #
 # In case singular and plural forms are the same omit
 # second argument on call:
 #
-# Language::English::Inflector.word 'information'
+# English::Inflect.word 'information'
 #
 # You can also define general, singularization and pluralization
 # rules:
 #
 # Once the following rule is defined:
-# Language::English::Inflector.rule 'y', 'ies'
+# English::Inflect.rule 'y', 'ies'
 #
 # You can see the following results:
 # irb> "fly".plural
@@ -125,14 +138,14 @@ Merb::Plugins.config[:fixtures] = {
 #
 # Example for singularization rule:
 #
-# Language::English::Inflector.singular_rule 'o', 'oes'
+# English::Inflect.singular_rule 'o', 'oes'
 #
 # Works like this:
 # irb> "heroes".singular
 # => hero
 #
 # Example of pluralization rule:
-# Language::English::Inflector.singular_rule 'fe', 'ves'
+# English::Inflect.singular_rule 'fe', 'ves'
 #
 # And the result is:
 # irb> "wife".plural
